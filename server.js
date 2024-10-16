@@ -15,13 +15,18 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://colab-edt-backend-iota.vercel.app"],
+    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend-iota.vercel.app"],
     methods: ['GET', 'POST', 'PUT'],
     credentials: true,
   },
 });
 
-app.use(cors());
+app.use(cors({
+    origin: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }));
+
 app.use(express.json());
 
 mongoose
