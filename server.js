@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend-iota.vercel.app"],
+    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend.vercel.app"],
     methods: ['GET', 'POST', 'PUT'],
     credentials: true,
   },
