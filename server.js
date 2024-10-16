@@ -15,8 +15,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST'],
+    origin: true,
+    methods: ['GET', 'POST', 'PUT'],
     credentials: true,
   },
 });
@@ -31,6 +31,9 @@ mongoose
 
 app.use('/api/users', userRoute);
 app.use('/api/docs', docRoute);
+app.get('/', (req,res) =>{
+    return res.json("hello world!")
+});
 
 let document = new Document();
 let users = [];
