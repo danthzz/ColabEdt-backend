@@ -22,7 +22,7 @@ const io = socketIO(server, {
 });
 
 app.use(cors({
-    origin: true,
+    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }));
