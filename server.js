@@ -19,6 +19,7 @@ const io = socketIO(server, {
     methods: ['GET', 'POST', 'PUT'],
     credentials: true,
   },
+  transports: ['websocket', 'polling']
 });
 
 app.use(cors({
