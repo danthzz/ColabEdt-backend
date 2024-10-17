@@ -15,14 +15,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server, {
   cors: {
-    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend.vercel.app"],
+    origin: ["https://colabedit.netlify.app", "https://colabedt-backend.onrender.com"],
     methods: ['GET', 'POST', 'PUT'],
     credentials: true,
   },
 });
 
 app.use(cors({
-    origin: ["https://colabedit.netlify.app", "https://colab-edt-backend.vercel.app"],
+    origin: ["https://colabedit.netlify.app", "https://colabedt-backend.onrender.com"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }));
