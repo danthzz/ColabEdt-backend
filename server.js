@@ -57,8 +57,10 @@ io.on('connection', (socket) => {
         socket.emit('load-document', { content: document.content, users });
       
         io.to(documentId).emit('user-list', users);
+        
 
         socket.on('send-changes', (data) => {
+            console.log('Alterações recebidas do cliente:', data.content);
             document.content = data.content;
             socket.broadcast.to(documentId).emit('receive-changes', data.content);
         });
